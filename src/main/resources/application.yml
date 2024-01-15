@@ -1,0 +1,26 @@
+
+server:
+  port: 8080
+  servlet:
+    contextPath: /api
+athena:
+  region: us-east-1
+  workgroup: primary
+  catalog: AwsDataCatalog
+  database: worldcitiesdb
+  limit: 25
+  client-execution-timeout: 100000
+  retry-sleep: 1000          # 1 second
+  results-bucket: s3://world-cities-results
+
+logging:
+  level:
+    root: DEBUG
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+    jmx:
+      exposure:
+        include: '*'
